@@ -1,0 +1,35 @@
+
+<div class="pagination__container">
+  <button class="btn btn-primary mr-1"
+       [ngClass]="currentPage === 1 && 'pagination__button--disabled'"
+       (click)="onFirstPage()"
+  >
+    First
+</button>
+  <button class="btn btn-primary mr-2"
+       [ngClass]="currentPage === 1 && 'pagination__button--disabled'"
+       (click)="onPreviousPage()" [disabled]="currentPage === 1"
+  >
+    Previous
+</button>
+
+   <a class="pagination__page-active mr-2">
+    <input class="pagination__current-page" (input)="onSetPage($event)" [value]="currentPage"> / <span>{{allPagesNumber}}</span>
+  </a> 
+  <button class="btn btn-primary mr-1"
+       [ngClass]="currentPage === allPagesNumber && 'pagination__button--disabled'"
+       (click)="onNextPage()" [disabled]="currentPage === allPagesNumber"
+  >
+    Next
+  </button>
+  <button class="btn btn-primary mr-1"
+       [ngClass]="currentPage === allPagesNumber && 'pagination__button--disabled'"
+       (click)="onLastPage()"
+  >
+    Last
+  </button>
+
+  <li class="page-item mr-1">
+    Items Per Page: <input class="pagination__current-page" (input)="onSetSize($event)" [value]="pageSize">
+  </li>
+</div>

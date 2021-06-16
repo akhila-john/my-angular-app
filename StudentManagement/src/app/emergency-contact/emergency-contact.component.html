@@ -1,0 +1,36 @@
+<p>emergency-contact works!</p>
+
+<!-- <nav aria-label="Page navigation example">
+    <ul class="pagination pg-blue">
+      <li class="page-item">
+        <a class="page-link" aria-label="Previous" mdbWavesEffect>
+          <span aria-hidden="true">&laquo;</span>
+          <span class="sr-only">Previous</span>
+        </a>
+      </li>
+      <li class="page-item"><a class="page-link" mdbWavesEffect>1</a></li>
+      <li class="page-item"><a class="page-link" mdbWavesEffect>2</a></li>
+      <li class="page-item"><a class="page-link" mdbWavesEffect>3</a></li>
+      <li class="page-item">
+        <a class="page-link" aria-label="Next" mdbWavesEffect>
+          <span aria-hidden="true">&raquo;</span>
+          <span class="sr-only">Next</span>
+        </a>
+      </li>
+    </ul>
+  </nav> -->
+
+
+  <div class="main__container">
+    <h1>Angular Pagination</h1>
+    <div class="list__container">
+        <div class="list_data">
+          <p *ngFor="let item of  displayedData" >
+            {{ item.student_id }} - {{ item.first_name }}
+          </p>
+        </div>
+    </div> 
+      
+    <app-pagination [allPagesNumber]="allPages" (changePage)="onPageChange($event)"></app-pagination>
+  </div>
+

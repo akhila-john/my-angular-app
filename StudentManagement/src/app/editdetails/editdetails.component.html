@@ -1,0 +1,69 @@
+<!-- <table>
+    <tr>
+        <td>student_id</td>
+        <td><input type="number" [(ngModel)]= "userdata.student_id"></td>
+    </tr>
+    <tr>
+        <td>first_name</td>
+        <td><input type="text" [(ngModel)]= "userdata.first_name"></td>
+    </tr>
+    <tr>
+        <td>last_name</td>
+        <td><input type="text" [(ngModel)]= "userdata.last_name"></td>
+    </tr>
+    <tr>
+        <td>batch_id</td>
+        <td><input type="number" [(ngModel)]= "userdata.batch_id"></td>
+    </tr>
+    <tr>
+        <td>gender</td>
+        <td><input type="text" [(ngModel)]= "userdata.gender"></td>
+    </tr>
+    <tr>
+        
+        <td><input type="button" value="update" (click)="updatecustomerdata()"></td>
+    </tr>
+</table> -->
+
+<h2><b>Update</b></h2>
+<div class="card-body">  
+    
+    <form  (ngSubmit)="updatecustomerdata()">
+   <div class="row">  
+       <div class="form-group col-sm-3">  
+           <label for="company"><b>Student Id </b></label>  
+           <input type="number"  class="form-control"  id="studentid" placeholder="Enter Student Id"  [(ngModel)]= "userdata.student_id" name="student_id">
+       </div> 
+    </div> 
+       <div class="row">
+       <div class="form-group col-sm-3">  
+           <label for="company"><b>First Name</b></label>  
+           <input type="text"  class="form-control"  id="firstname" placeholder="Enter First Name"  [(ngModel)]= "userdata.first_name" name="first_name">
+       </div>
+    </div>  
+       <div class="row">
+       <div class="form-group col-sm-3">  
+           <label for="company"><b>Last Name</b></label>  
+           <input type="text"  class="form-control"  id="lastname" placeholder="Enter Last Name"   [(ngModel)]= "userdata.last_name" name="last_name">
+       </div>
+    </div>
+       <div class="row"> 
+       <div class="form-group col-sm-3">  
+           <label for="company"><b>Batch Id</b></label>  
+           <input type="number"  class="form-control"  id="batchid" placeholder="Enter Batch Id"   [(ngModel)]= "userdata.batch_id" name="batch_id">
+       </div> 
+    </div>
+       <div class="row">
+       <div class="form-group col-sm-3">  
+           <label for="company"><b>Gender</b></label>  
+           <input type="text"  class="form-control"  id="gender" placeholder="Enter Gender"    [(ngModel)]=  "userdata.gender" name="gender">
+       </div> 
+    </div>
+       <div class="row"> 
+           <div class="form-group col-sm-3">  
+               <button type="submit" class="btn btn-primary mr-1">Update</button>  
+            
+           </div> 
+       </div> 
+         
+       </form>

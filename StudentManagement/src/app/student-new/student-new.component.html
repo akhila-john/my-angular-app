@@ -1,0 +1,73 @@
+
+
+<h3 class="text">Student List</h3><br>
+<div class="center">
+ <input type="checkbox" [checked]="showId" (change)="showId=!showId" />StudentId
+<input type="checkbox" [checked]="showFirstname" (change)="showFirstname=! showFirstname" />Firstname
+<input type="checkbox" [checked]="showdel" (change)="showdel=!showdel" />Delete 
+</div><br><br>
+
+<div class="card-footer">  
+    <div class="col-lg-12 table-responsive">  
+        <table class="table table-hover table-striped ">  
+            <thead>  
+<tr >
+    <th scope="col"  *ngIf="showId" >Student Id
+         <!-- <input type="checkbox" [checked]="!showId" (change)="showId=!showId" />  -->
+        
+    </th>
+
+    <th scope="col" *ngIf="showFirstname"> Firstname
+        <!-- <input type="checkbox" [checked]="!showFirstname" (change)="showFirstname=! showFirstname" /> -->
+       </th>
+
+       <th scope="col" *ngIf="showdel" > Delete
+        <!-- <input type="checkbox" [checked]="!showdel" (change)="showdel=!showdel" /> -->
+    </th>
+
+</tr>
+</thead>  
+<tbody> 
+   
+    <tr   *ngFor="let c of collection.data" >
+    
+          <a routerLink="/viewdetails/{{c.student_id}}"> 
+         <span class="badge"  *ngIf="showId">{{c.student_id }}</span> 
+        </a>  
+        <!-- <td *ngIf="showId">{{c.student_id}}</td> -->
+        <!-- <td *ngIf="showFirstname">{{c.first_name}}</td> -->
+
+        <td routerLink="/viewdetails/{{c.student_id}}" >
+            <span class="badge"  *ngIf="showFirstname">{{c.first_name }}</span> 
+        </td>
+
+        <!-- <td>{{c.last_name}}</td>
+        <td>{{c.batch_id}}</td>
+        <td>{{c.gender}}</td> -->
+
+         <td  *ngIf="showdel">
+             <button type="button" class="btn btn-primary mr-1" (click)="deletecustomerdetails(c.student_id)">Delete</button>  
+            <!-- <button type="button" class="btn btn-danger mr-1" (click)="studentdetails(c.student_id)">View Details</button> -->
+            <!-- <button type="button" class="btn btn-danger mr-1" (click)="loadnewcomponent(c.student_id)">Update</button> -->
+         </td>  
+
+        
+     </tr> 
+ </tbody>  
+
+</table>
+ <div>
+    <app-pagination-new [totalRecords]="totalvalue" [recordsPerPage]="currentsize" (onPageChange)="pageChanged($event)" 
+    (pageSizeEvent)="newPageSize($event)"></app-pagination-new> 
+    <!-- items per page: 
+    <input type ="text" class="form-control" placeholder="">
+    <select >
+   <option  *ngFor="let item of pageSizes" [ngValue]="item"> {{item}}</option> 
+   
+     
+    
+     
+    </select> -->
+
+</div>
+   

@@ -1,0 +1,126 @@
+
+
+ 
+ 
+  <h3 class="text">Student List</h3><br>
+  <div class="center">
+   <input type="checkbox" [checked]="showId" (change)="showId=!showId" />StudentId
+  <input type="checkbox" [checked]="showFirstname" (change)="showFirstname=! showFirstname" />Firstname
+  <input type="checkbox" [checked]="showdel" (change)="showdel=!showdel" />Delete 
+</div><br><br>
+
+  <div class="border">
+    <input class="form-control" type="text" name="firstname" [(ngModel)]="first_name" (ngModelChange)="search()"
+    placeholder="Enter first name to search" >
+</div><br> 
+
+  <div class="card-footer">  
+        <div class="col-lg-12 table-responsive">  
+            <table class="table table-hover table-striped ">  
+                <thead>  
+    <tr >
+        <th scope="col"  *ngIf="showId" >Student Id
+             <!-- <input type="checkbox" [checked]="!showId" (change)="showId=!showId" />  -->
+            
+        </th>
+
+        <th scope="col" *ngIf="showFirstname"> Firstname
+            <!-- <input type="checkbox" [checked]="!showFirstname" (change)="showFirstname=! showFirstname" /> -->
+           </th>
+
+           <th scope="col" *ngIf="showdel" > Delete
+            <!-- <input type="checkbox" [checked]="!showdel" (change)="showdel=!showdel" /> -->
+        </th>
+        <!-- <th>last_name</th>
+        <th>batch_id</th>
+        <th>gender</th> -->
+       
+       
+       
+  </tr>
+</thead>  
+<tbody> 
+   
+    <tr   *ngFor="let c of displayedData;" >
+    
+          <a routerLink="/viewdetails/{{c.student_id}}"> 
+         <span class="badge"  *ngIf="showId">{{c.student_id }}</span> 
+        </a>  
+        <!-- <td *ngIf="showId">{{c.student_id}}</td> -->
+        <!-- <td *ngIf="showFirstname">{{c.first_name}}</td> -->
+        <td routerLink="/viewdetails/{{c.student_id}}" >
+            <span class="badge"  *ngIf="showFirstname">{{c.first_name }}</span> 
+        </td>
+        <!-- <td>{{c.last_name}}</td>
+        <td>{{c.batch_id}}</td>
+        <td>{{c.gender}}</td> -->
+
+         <td  *ngIf="showdel">
+             <button type="button" class="btn btn-primary mr-1" (click)="deletecustomerdetails(c.student_id)">Delete</button>  
+            <!-- <button type="button" class="btn btn-danger mr-1" (click)="studentdetails(c.student_id)">View Details</button> -->
+            <!-- <button type="button" class="btn btn-danger mr-1" (click)="loadnewcomponent(c.student_id)">Update</button> -->
+         </td>  
+
+        
+     </tr> 
+ </tbody>  
+
+</table>
+ <div>
+    <app-pagination [allPagesNumber]="allPages" (changePage)="onPageChange($event)"  (pageSizeEvent)=" getPageInNewSize($event)"></app-pagination>
+    <!-- <pagination-controls id="listing_pagination" maxSize="5" directionLinks="true" (pageChange)="page = $event"></pagination-controls> -->
+<!-- </div> 
+</div>    --> 
+
+<!-- -->
+
+
+
+<!-- <div class="border">
+    <input class="form-control" type="text" name="firstname" [(ngModel)]="first_name" (ngModelChange)="search()"
+    placeholder="Enter first name to search" >
+</div> <br> -->
+<!-- <h2 class="text"><b>Student List</b></h2><br> -->
+<!-- <ul class="list-group" id="list-tab role=tablist">
+    <li class="list-group-item d-flex justify-content-between align-items-center
+    list-group-item-action list-group-item-light"
+    data-toggle="list" routerLink="/viewdetails/{{c.student_id}}"
+    *ngFor="let c of displayedData">
+
+<span class="badge badge-light">{{c.student_id}}</span> {{c.first_name}}
+
+    
+<button type="button" class="btn btn-primary mr-1" (click)="deletecustomerdetails(c.student_id)">Delete</button> 
+</li>
+
+</ul><br>
+
+ <div>
+    <app-pagination [allPagesNumber]="allPages" (changePage)="onPageChange($event)" (pageSizeEvent)=" getPageInNewSize($event)"></app-pagination>
+    
+</div><br>  -->
+<!-- <b>items per page:</b><input type="number" [(ngModel)]="itemsPerPage"> -->
+
+
+
+
+
+
+
+<!-- <table class="table table-striped">
+    <thead>
+        <tr>
+            <th>StudentId</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let c of displayedData">
+            <td>{{c.student_id}}</td>
+            <td>{{c.first_name}}</td>
+            <td>
+                <app-pagination [allPagesNumber]="allPages" (changePage)="onPageChange($event)" (pageSizeEvent)=" getPageInNewSize($event)"></app-pagination> 
+            </td>
+        </tr>
+
+    </tbody>
+</table> -->

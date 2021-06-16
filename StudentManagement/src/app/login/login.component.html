@@ -1,0 +1,105 @@
+<!-- <span *ngIf="isavailable;then condition1 else condition2">login</span>
+<ng-template #condition1>
+    <nav class="navbar navbar-dark bg-dark">
+        <a href="#" class="navbar-brand">College Management</a>
+         <div class="navbar-nav mr-auto">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+             <li class ="nav-item">
+               <a routerLink="/home" class="nav-link">Home</a>
+              </li> 
+       <li class ="nav-item">
+              <a routerLink="/student" class="nav-link">Student</a>
+             </li>   
+
+             <li class ="nav-item">
+                <a routerLink="/addstudent" class="nav-link">Add Student</a>
+               </li>  
+               <li class ="nav-item">
+                <a routerLink="/batch-details" class="nav-link">batch</a>
+               </li>
+               </ul>              
+                <!-- <button (click)="logout()">
+                Logout
+              </button>  -->
+            <!-- </div>
+      
+      </nav> 
+       <router-outlet></router-outlet>
+    
+  </ng-template>  
+ <ng-template #condition2>     -->
+
+    
+
+ <div class="container" >
+     <div class="image">
+         
+       <!-- <img src="assets/image/login.jpg ">     -->
+     <!-- <h1 style="text-align: center " >Welcome To St.Thomas College</h1> -->
+    </div>
+    <div class="row justify-content-center">
+        
+        <div class="col-md-7">
+               <div class="jumbotron" >   
+               <div class="parent">
+                <h2>Admin Login</h2>
+            </div>
+                <form name="form" [formGroup]="form" (ngSubmit)="login()">
+                    <div class="imgcontainer">
+                        <img src="assets\image\admin.png" class="rounded mx-auto d-block" style="height:200px; width:200px">
+                      </div>
+                     <modal #modal [modalConfig]="modalConfig">
+                        Invalid Credentials
+                      </modal> 
+
+                 <small class="danger">{{msg}}</small>   
+                    <div class="form-group textbox">
+                        <!-- <div class="icon"> -->
+                            <i class="fa fa-user " aria-hidden="true"> </i> 
+                                <input type ="text"  placeholder="username" class="form-control"  formControlName="userName"  [(ngModel)]="userName"  [ngClass]="{'is-invalid':
+                                form.get('userName').touched && form.get('userName').invalid}" /> 
+                               
+                                <div *ngIf="form.get('userName').touched && form.get('userName').invalid"  class="invalid-feedback">
+                                    <div *ngIf="form.get('userName').errors.required">Username is required</div>  
+                                    <div *ngIf="form.get('userName').errors.pattern">Username is invalid [no numerals and should have atleast 4 letters]</div>
+                               
+
+                                
+                                <!-- displays the error message =>ngIf="form.get('userName').errors -->
+                                <!-- get('userName') => to acess from control,geter is iused -->
+                         
+                        <!-- </div> -->
+                        <!-- <label for="userName">Username</label> -->
+                        
+                    </div>  
+            
+                      
+                        
+                    </div>
+
+                    <div class="form-group  textbox">
+                        <!-- <label for="password">Password</label> -->
+                        <i class="fa fa-lock" aria-hidden="true"></i>
+                        <input type ="password"placeholder="Password" class="form-control"  formControlName="password" [(ngModel)]="password" [ngClass]="{'is-invalid':
+                        form.get('password').touched && form.get('password').invalid}"/>
+                        <div *ngIf="form.get('password').touched && form.get('password').invalid" class="invalid-feedback">
+                            <div *ngIf="form.get('password').errors.required">password is required</div>
+                            <div *ngIf="form.get('password').errors.minlength">password must be atleast 4 characters</div>
+                            <div *ngIf="form.get('password').errors.pattern">password can have only letters</div>
+                        </div>
+                    </div>
+                    <div class="form-group btn">
+                        <button type="submit" class="btn-btn-success" >Login</button>
+                    </div>
+                    
+                </form>
+              </div>  
+         <!-- </div>  -->
+
+  </div>  
+
+  </div>    
+
+</div> 
+ <!-- </ng-template>  -->
+ 

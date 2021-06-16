@@ -1,0 +1,48 @@
+.fixed-header, .fixed-footer{
+    width: 150%;
+    position: fixed;        
+    background: #da2f2f86;
+    padding: 10px 0;
+    color: gray;
+}
+.fixed-header{
+    top: 20;
+    width:100%;
+    padding: 17px 0;
+}
+.fixed-footer{
+    bottom: 0;
+}
+.container{
+    width: 100%;
+    margin: 0 auto; }
+.topspace{
+    padding-top: 2.5%;
+    background: #da2f2f86;
+}
+.alignment1{
+    float: right;
+    
+}
+.alignment2{
+    float: left;
+    
+}
+.forcompo{
+    margin-left:18%;padding:3%;
+    
+}
+h1{
+    font-family: times, Times New Roman, times-roman, georgia, serif;
+    color: rgb(109, 10, 84);
+    margin: 0;
+    padding: 0px 0px 6px 0px;
+    font-size: 30px;
+    line-height: 15px;
+    letter-spacing: -2px;
+    font-weight: bold;
+    text-align: center;
+}
+.navbar-custom {
+    background-color: lightgreen;
+}

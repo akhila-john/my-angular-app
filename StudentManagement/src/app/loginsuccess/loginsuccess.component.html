@@ -1,0 +1,48 @@
+
+ <div class="container">
+
+   <div class="row justify-content-center">
+       <div class="col-md-10">
+           <!-- (ngSubmit)="login(loginForm)" -->
+           <div class="jumbotron">
+              <div class="parent">
+               <h2>Login</h2>
+           </div>
+               <form #loginForm="ngForm" [formGroup]="form">
+                <small class="danger">{{msg}}</small>   
+                   <div class="form-group">
+                       <label for="userName">Username</label>
+                       
+                       <input type ="text" class="form-control" formControlName="userName" [(ngModel)]="userName"  [ngClass]="{'is-invalid':
+                        form.get('userName').touched && form.get('userName').invalid}" />
+                        <!-- displays the error message =>ngIf="form.get('userName').errors -->
+                        <!-- get('userName') => to acess from control,geter is iused -->
+                       <div *ngIf="form.get('userName').touched && form.get('userName').invalid"  class="invalid-feedback">
+                           <div *ngIf="form.get('userName').errors.required">Username is required</div>  
+                           <div *ngIf="form.get('userName').errors.pattern">Username is invalid [no numerals and should have atleast 4 letters]</div>
+                               
+                       </div>
+                   </div>
+
+                   <div class="form-group">
+                       <label for="password">Password</label>
+                       <input type ="password" class="form-control"  formControlName="password" [(ngModel)]="password" [ngClass]="{'is-invalid':
+                       form.get('password').touched && form.get('password').invalid}"/>
+                       <div *ngIf="form.get('password').touched && form.get('password').invalid" class="invalid-feedback">
+                           <div *ngIf="form.get('password').errors.required">password is required</div>
+                           <div *ngIf="form.get('password').errors.minlength">password must be atleast 4 characters</div>
+                           <div *ngIf="form.get('password').errors.pattern">password can have only letters</div>
+                       </div>
+                   </div>
+                   <div class="form-group">
+                       <button type="submit" class="btn-btn-info" >Login</button>
+                       <label>
+                        <input type="checkbox" checked="checked" name="remember"> Remember me
+                      </label>
+                   </div>
+                   
+               </form>
+           </div>
+       </div>
+   </div>
+</div> 

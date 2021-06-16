@@ -1,0 +1,100 @@
+
+ <!-- <div class="container">
+<h2>Add Student</h2>
+</div> -->
+
+ <!-- <ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Add Student</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+
+    Details added successfully
+      
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-primary" (click)="modal.close('Save click')">Done</button>
+    </div>
+  </ng-template> 
+   -->
+  
+
+  
+  
+    
+
+      
+
+
+
+
+
+
+
+
+<div class="card-body">  
+    
+         <form  (ngSubmit)="SaveCustomerdata()">
+
+            <div class="jumbotron text-center bg-secondary"> 
+                <h2>Add Student</h2>
+             </div> 
+
+            <modal #modal [modalConfig]="modalConfig">
+                details added successfully
+              </modal>
+
+         
+            <div class="row justify-content-center">
+            <div class="form-group col-sm-3">  
+                <label for="company"><b>Student Id </b></label>  
+                <input type="number"  class="form-control"  id="studentid" placeholder="Enter Student Id"  [(ngModel)]= "obj_s.student_id" name="student_id">
+            </div> 
+        </div>
+    
+
+            
+                <div class="row justify-content-center">
+            <div class="form-group col-sm-3">  
+                <label for="company"><b>First Name</b></label>  
+                <input type="text"  class="form-control"  id="firstname" placeholder="Enter First Name"  [(ngModel)]= "obj_s.first_name" name="first_name">
+            </div> 
+        </div>
+   
+            
+                <div class="row justify-content-center">
+            <div class="form-group col-sm-3">  
+                <label for="company"><b>Last Name</b></label>  
+                <input type="text"  class="form-control"  id="lastname" placeholder="Enter Last Name"   [(ngModel)]= "obj_s.last_name" name="last_name">
+            </div> 
+        </div>
+    
+           
+                <div class="row justify-content-center">
+            <div class="form-group col-sm-3">  
+                <label for="company"><b>Batch Id</b></label>  
+                <input type="number"  class="form-control"  id="batchid" placeholder="Enter Batch Id"   [(ngModel)]= "obj_s.batch_id" name="batch_id">
+            </div> 
+        </div>
+   
+           
+                <div class="row justify-content-center">
+            <div class="form-group col-sm-3">  
+                <label for="company"><b>Gender</b></label>  
+                <input type="text"  class="form-control"  id="gender" placeholder="Enter Gender"    [(ngModel)]= "obj_s.gender" name="gender">
+            </div> 
+        </div> 
+    
+        <div class="row justify-content-center"> 
+                <div class="form-group col-sm-3">  
+                    <button type="submit" class="btn btn-primary mr-1" >Add Student</button>  
+                 
+                </div> 
+            </div> 
+              
+            </form>
+            
+            <!-- (click)="open(content)" -->

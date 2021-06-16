@@ -1,0 +1,28 @@
+
+
+<!-- <div class="border">
+    <input class="form-control" type="text" name="firstname" [(ngModel)]="first_name" (ngModelChange)="search()"
+    placeholder="Enter first name to search" >
+</div> -->
+
+<div class="card-footer">
+    
+     <div class="jumbotron text-center bg-secondary"> 
+        <h2>Student Details</h2>
+     </div> 
+
+    <!-- <input type="checkbox" [checked]="showId" (change)="showId=!showId" />
+    <input type="checkbox" [checked]="showFirstname" (change)="showFirstname=! showFirstname" /> -->
+
+    <div class="row">
+        <div class="col-md-12">
+            <app-table [GridData]="collection.data" [ColData]="colData" (RowSelection)="rowSelection($event)" (RowDeletion)="deletecustomerdetails($event)"></app-table>
+        </div>
+        
+    </div>
+</div>
+
+<div>
+    <app-pagination-new [totalRecords]="totalvalue" [recordsPerPage]="currentsize" (onPageChange)="pageChanged($event)" 
+    (pageSizeEvent)="newPageSize($event)"></app-pagination-new> 
+</div>
